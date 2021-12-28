@@ -1,0 +1,21 @@
+.form-popup {
+  position: fixed;
+  top: 50px;
+  left: 15px;
+  border: 2px solid #0044aa;
+  z-index: 9;
+  border-radius: 35px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 225px;
+  padding: 10px;
+  background-color: rgb(150, 75, 14);
+  border-radius: 30px;
+  text-align: center;
+}
+.seperate {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
