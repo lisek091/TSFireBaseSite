@@ -5,5 +5,6 @@ export type FormDataRegisterTypes = {
     lastName?:string
     source?:string
     email: string
-    password:string
+    password: any
+    timestamp : any
 }

@@ -8,18 +8,19 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { db } from '../../firebase.config';
-import { async } from '@firebase/util';
-
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom'
-
+import { toast } from 'react-toastify'
 const Register = () => {
+    const init = db
     const navigate = useNavigate()
     const [formData, setFormData] = useState<FormDataRegisterTypes>({
         email: "",
         password: "",
         firstName: "",
         lastName: "",
-        source: "Facebook"
+        source: "Facebook",
+        timestamp: {}
     })
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData((prevState) => ({
@@ -51,9 +52,16 @@ const Register = () => {
                 updateProfile(auth.currentUser, {
                     displayName: firstName
                 })
-            navigate("/home")
+            const formDataCopy = { ...formData }
+            delete formDataCopy.password
+            formDataCopy.timestamp = serverTimestamp()
+
+            await setDoc(doc(db, 'users', user.uid), formDataCopy)
+
+            alert("Succes")
+            navigate("/")
         } catch (error) {
-            console.log(error)
+            toast.error("Bad user credentials")
         }
     }
     return (
@@ -79,7 +87,7 @@ const Register = () => {
                     <MenuItem value={"Other"}>Other</MenuItem>
                 </Select>
                 {(source === "Other") ? <OtherOption /> : <div></div>}
-                <button>Sign Up</button>
+                <Button variant="contained" color="secondary" sx={{ marginRight: "5px" }} type="submit" >Register</Button>
             </form>
         </div>
 
