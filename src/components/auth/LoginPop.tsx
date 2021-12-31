@@ -4,8 +4,9 @@ import "./loginPop.css"
 import { FormDataTypes } from '../types/formDataTypeLogin';
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Oauth from './Oauth';
 const LoginPop = () => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState<FormDataTypes>({
@@ -28,8 +29,9 @@ const LoginPop = () => {
 
             if (userCredential.user) {
                 toast.success('Welcome!')
-                navigate('/profile')
             }
+            navigate('/profile')
+
         } catch (error) {
             toast.error("bad user credentials")
         }
@@ -37,12 +39,13 @@ const LoginPop = () => {
 
     }
     return (
-        <div className="form-popup ">
-            <form className="form-container" onSubmit={onSubmit}>
+        <div className="form-popup form-container">
+            <form onSubmit={onSubmit}>
                 <TextField label="Type in your email" color="primary" type="email" style={{ padding: "5px" }} value={email} onChange={onChange} id="email" />
                 <TextField label="Type in your password" color="primary" type="password" style={{ padding: "5px" }} value={password} onChange={onChange} id="password" />
                 <Button variant="contained" color="secondary" style={{ padding: "5px", width: "125px" }} type="submit">Sign in</Button>
             </form>
+            <Oauth />
         </div>
 
     )

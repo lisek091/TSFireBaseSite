@@ -2,7 +2,7 @@ import React from "react";
 
 export type FormDataRegisterTypes = {
     firstName?:string
-    lastName?:string
+    phoneNumber?:string
     source?:string
     email: string
     password: any
