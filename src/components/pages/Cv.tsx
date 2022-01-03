@@ -1,7 +1,10 @@
 const Cv = () => {
+    const xd = [9, 6]
     return (
         <div>
-            CV
+            {xd.map((wtf, index) => {
+                return (<div key={index}>{wtf}</div>)
+            })}
         </div>
     )
 }

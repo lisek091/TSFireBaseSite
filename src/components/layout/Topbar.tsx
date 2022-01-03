@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import React, { useState, useEffect } from 'react';
 import LoginPop from "../auth/LoginPop";
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { getAuth } from '@firebase/auth';
 const Topbar = () => {
     const [logged, setLogged] = useState(false)
@@ -15,9 +15,10 @@ const Topbar = () => {
         if (auth.currentUser !== null) {
             setLogged(true)
         }
-    }, [logged])
+        // eslint-disable-next-line
+    }, [])
     const navigate = useNavigate()
-    const [search, setSearch] = useState<null | string | React.ChangeEvent<HTMLInputElement>>(null)
+    const [search, setSearch] = useState<null | string | React.ChangeEvent<HTMLInputElement>>("")
     const [logTab, setLogTab] = useState(false)
     const onTypeIn = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value)

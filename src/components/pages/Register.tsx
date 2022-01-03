@@ -18,6 +18,7 @@ import Box from '@mui/material/Box';
 
 const Register = () => {
     //const Image = require('../assets/RegisterPageBackgrond.jpg')
+    // eslint-disable-next-line
     const init = db
     const navigate = useNavigate()
     const [formData, setFormData] = useState<FormDataRegisterTypes>({
@@ -46,7 +47,7 @@ const Register = () => {
     const OtherOption = () => {
         return (
             <div>
-                <TextField label="Source" color="primary" type="text" style={{ padding: "5px" }} />
+                <TextField label="Where did you find this site?" color="primary" type="text" style={{ padding: "5px", width: "220px" }} />
             </div>
         )
     }
@@ -76,12 +77,12 @@ const Register = () => {
     return (
         // style={{ backgroundImage: `url(${Image})` }}
         // do edycji ??
-        <Box sx={{ backgroundColor: "#D3D3D3" }}>
+        <Box sx={{ backgroundColor: "#D3D3D3", height: "100vh" }}>
             <Grid container spacing={0} justifyContent="center" textAlign="center" >
 
                 <form onSubmit={onSubmit} >
                     <Grid item xs={12}>
-                        <div style={{ height: "100px" }}></div>
+                        <div style={{ height: "50px" }}></div>
                     </Grid>
                     <Grid item xs={12}>
                         <Typography variant="subtitle2"> Required </Typography>
@@ -131,9 +132,6 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12} sx={{ padding: "15px 0px 10px" }}>
                     <Button variant="contained" color="primary" sx={{ marginRight: "5px" }} onClick={() => { navigate('/') }} >Back to main page</Button>
-                </Grid>
-                <Grid item xs={12}>
-                    <div style={{ height: "220px" }}></div>
                 </Grid>
             </Grid>
         </Box >

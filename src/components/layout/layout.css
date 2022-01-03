@@ -1,3 +1,20 @@
 .googleClass {
   cursor: pointer;
 }
+.bg-global {
+  background: rgb(196, 123, 43);
+  background: radial-gradient(
+    circle,
+    rgba(196, 123, 43, 1) 0%,
+    rgba(25, 81, 184, 1) 35%,
+    rgba(26, 9, 65, 1) 61%
+  );
+}
+.bg-card {
+  background: rgb(93, 53, 19);
+  background: linear-gradient(
+    180deg,
+    rgb(91, 90, 109) 0%,
+    rgb(17, 31, 63) 100%
+  );
+}

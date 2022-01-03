@@ -36,7 +36,7 @@ const Oauth = () => {
         <div>
             <p>Sign {location.pathname === '/register' ? "Up" : "In"} with </p>
             <button onClick={onGoogleClick} style={{ border: 0, background: "none" }} className="googleClass">
-                <img src={googleIcon} width="40px" height="40px" />
+                <img src={googleIcon} width="40px" height="40px" alt="Google icon" />
             </button>
         </div>
     )

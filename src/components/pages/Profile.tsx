@@ -1,5 +1,5 @@
 import { getAuth, updateProfile } from 'firebase/auth'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { updateDoc, doc } from '@firebase/firestore'
 import { db } from '../../firebase.config'
@@ -52,10 +52,10 @@ const Profile = () => {
 
     return (
         // do edycji ??
-        <Box sx={{ backgroundColor: "#D3D3D3", columnSpan: "all" }}>
+        <Box sx={{ backgroundColor: "#D3D3D3", columnSpan: "all", height: "100vh" }}>
             <Grid container spacing={0} justifyContent="center" textAlign="center" >
                 <Grid item xs={12} >
-                    <div style={{ height: "100px" }} />
+                    <div style={{ height: "50px" }} />
 
                     <Grid item xs={12}>
                         <Button onClick={() => navigate('/')} variant="contained" sx={{ width: "200px", margin: "15px" }}>Back to main page</Button>
@@ -92,7 +92,6 @@ const Profile = () => {
                     </form>
                 </Grid>
             </Grid>
-            <div style={{ height: "390px" }} />
         </Box >
     )
 }
