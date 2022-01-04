@@ -21,7 +21,7 @@ const Home = () => {
                 <Grid item xs={0} sm={1} md={2} xl={3}>
                 </Grid>
                 <Grid item xs={12} sm={10} md={8} xl={6}>
-                    <Card name="Welcome! " description="This is my study site where i practice my web skills. If you have any questions or sugestion fell free to write to me!" image={Image1} >
+                    <Card name="Welcome! " description="This is my study site where I practice my web skills. If you have any questions or sugestion fell free to write to me!" image={Image1} >
                         <Button variant="contained" sx={{ height: "50px", width: "50%" }}>Show more</Button>
                     </Card>
                 </Grid>
@@ -39,7 +39,7 @@ const Home = () => {
                 <Grid item xs={0} sm={1} md={2} xl={3}>
                 </Grid>
                 <Grid item xs={12} sm={10} md={8} xl={6}>
-                    <Card name="Games made in React?" description="I am a geek and love games... Soon i will add my small JS games here!" >
+                    <Card name="Games made in React?" description="I am a geek and love games... Soon I will add my small JS games here!" >
                         <Button variant="contained" sx={{ height: "50px", width: "40%" }} onClick={() => navigate('/games')}>Go to Games made by me</Button>
                     </Card>
                 </Grid>

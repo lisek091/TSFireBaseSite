@@ -42,9 +42,7 @@ const Topbar = () => {
                         </div>}
 
                         <div style={{ flexGrow: 1 }}></div>
-                        <Typography variant="h6" component="div" sx={{ marginRight: "5px" }}  >
-                            Search here
-                        </Typography>
+
 
                         <TextField label="Type in to search" color="secondary" value={search} onChange={onTypeIn} />
                     </Toolbar>

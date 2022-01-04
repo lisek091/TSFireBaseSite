@@ -39,7 +39,7 @@ const LoginPop = () => {
 
     }
     return (
-        <div className="form-popup form-container">
+        <div className="form-popup form-container" style={{ backgroundColor: "#9ad29c" }}>
             <form onSubmit={onSubmit}>
                 <TextField label="Type in your email" color="primary" type="email" style={{ padding: "5px" }} value={email} onChange={onChange} id="email" />
                 <TextField label="Type in your password" color="primary" type="password" style={{ padding: "5px" }} value={password} onChange={onChange} id="password" />
