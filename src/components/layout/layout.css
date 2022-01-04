@@ -18,3 +18,7 @@
     rgb(17, 31, 63) 100%
   );
 }
+.picture:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
