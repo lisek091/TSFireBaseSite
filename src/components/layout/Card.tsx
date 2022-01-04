@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import useWindowDimensions from '../../hooks/useWindow';
 const Card = (props: CardProps) => {
 
-    const { width, height } = useWindowDimensions()
+    const { width } = useWindowDimensions()
     const RenderImage = () => {
         if (props.image) {
             if (width > 1600) {
