@@ -22,7 +22,7 @@ const Home = () => {
                 </Grid>
                 <Grid item xs={12} sm={10} md={8} xl={6}>
                     <Card name="Welcome! " description="This is my study site where I practice my web skills. If you have any questions or sugestion fell free to write to me!" image={Image1} >
-                        <Button variant="contained" sx={{ height: "50px", width: "50%" }}>Show more</Button>
+                        <Button variant="contained" sx={{ height: "50px", width: "50%" }} onClick={() => navigate('/about')}>Show more</Button>
                     </Card>
                 </Grid>
                 <Grid item xs={0} sm={1} md={2} xl={3}>
