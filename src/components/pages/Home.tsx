@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 import Footer from '../layout/Footer';
 import { useNavigate } from 'react-router-dom'
 import '../layout/layout.css'
-
 const Home = () => {
     const Image1 = require('../assets/RegisterPageBackgrond.jpg')
     const Image2 = require('../assets/CvPic.jpg')
@@ -30,8 +29,8 @@ const Home = () => {
                 <Grid item xs={0} sm={1} md={2} xl={3}>
                 </Grid>
                 <Grid item xs={12} sm={10} md={8} xl={6}>
-                    <Card name="Are you looking for junior or intern?" description="Check my repos and CV!" image={Image2}>
-                        <Button variant="contained" sx={{ height: "50px", width: "30%" }} onClick={() => navigate('/cv')}>Go to CV</Button>
+                    <Card name="Are you looking for junior or intern?" description="Check my repos and CV!" >
+                        <Button variant="contained" sx={{ height: "50px", width: "30%" }} onClick={() => navigate('/cv')}>Show CV</Button>
                     </Card>
                 </Grid>
                 <Grid item xs={0} sm={1} md={2} xl={3}>
