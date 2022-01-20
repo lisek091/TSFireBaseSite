@@ -19,7 +19,7 @@ const Navbar = () => {
                     showLabels
                     value={value}
                     onChange={(event, newValue) => {
-                        if (newValue !== "github" && newValue !== "linkedin") {
+                        if (newValue !== "linkedin") {
                             setValue(newValue);
                         }
                         else setValue(location.pathname)
@@ -28,8 +28,8 @@ const Navbar = () => {
                 >
                     <BottomNavigationAction label="Home" icon={<BiHomeAlt />} value="/" onClick={() => navigate("/")} />
                     <BottomNavigationAction label="About" icon={<DiGrunt />} value="/about" onClick={() => navigate("/about")} />
+                    <BottomNavigationAction label="Github" icon={<GoMarkGithub />} value="github" onClick={() => navigate("/github")} />
 
-                    <BottomNavigationAction label="Github" icon={<GoMarkGithub />} value="github" onClick={() => window.open("https://github.com/lisek091", "_blank")} />
                     <BottomNavigationAction label="Linkedin" icon={<SiLinkedin />} value="linkedin" onClick={() => window.open("https://www.linkedin.com/in/mateusz-lisowski-08676b161/", "_blank")} />
                 </BottomNavigation>
             </Box>

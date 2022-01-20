@@ -1,16 +1,16 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import React, { useState, useEffect } from 'react';
 import LoginPop from "../auth/LoginPop";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { getAuth } from '@firebase/auth';
 const Topbar = () => {
     const [logged, setLogged] = useState(false)
     const auth = getAuth()
+    const location = useLocation()
     useEffect(() => {
         if (auth.currentUser !== null) {
             setLogged(true)
@@ -42,9 +42,8 @@ const Topbar = () => {
                         </div>}
 
                         <div style={{ flexGrow: 1 }}></div>
+                        {(location.pathname === '/github') ? <TextField label="Search on Github" color="secondary" value={search} onChange={onTypeIn} /> : <div></div>}
 
-
-                        <TextField label="Type in to search" color="secondary" value={search} onChange={onTypeIn} />
                     </Toolbar>
                 </AppBar>
             </Box>

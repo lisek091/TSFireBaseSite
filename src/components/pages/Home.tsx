@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import '../layout/layout.css'
 const Home = () => {
     const Image1 = require('../assets/RegisterPageBackgrond.jpg')
-    const Image2 = require('../assets/CvPic.jpg')
+    //const Image2 = require('../assets/CvPic.jpg')
     const navigate = useNavigate()
     return (
         <Box sx={{ flexGrow: 1 }} className='bg-global'>
