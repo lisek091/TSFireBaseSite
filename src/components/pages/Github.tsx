@@ -17,6 +17,7 @@ const Github = () => {
     useEffect(() => {
         dispatch(GetUsers(usersName))
     }, [])
+    console.log(usersState)
     if (!usersState.users) {
         return (<div>
             ...loading
@@ -26,7 +27,7 @@ const Github = () => {
         return (
             <div className='bg-global' style={{ height: "100vh" }}>
                 <Topbar />
-                <img src={usersState.users!.map((user) => { user.avatar_url })} alt={usersState.users!.map((user) => { user.login })}></img>
+                <div>{usersState.users.map((user) => (<div>{user.login}</div>))}</div>
             </div>
         )
     }
