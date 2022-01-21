@@ -18,7 +18,7 @@ export type UsersType = {
             id: number,
             login :string,
             avatar_url:string,
-            url:string,           
+            html_url:string,           
 }[]
 
 export interface GithubUsersSucces {

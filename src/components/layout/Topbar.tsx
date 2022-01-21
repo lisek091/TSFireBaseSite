@@ -7,7 +7,13 @@ import React, { useState, useEffect } from 'react';
 import LoginPop from "../auth/LoginPop";
 import { useNavigate, useLocation } from 'react-router-dom'
 import { getAuth } from '@firebase/auth';
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../context/redux/store"
+import { GetUsers } from "../context/redux/actions/GithubActionsUsers"
+import { toast } from 'react-toastify';
 const Topbar = () => {
+    const dispatch = useDispatch()
+    const usersState = useSelector((state: RootState) => state.githubUsersReducer)
     const [logged, setLogged] = useState(false)
     const auth = getAuth()
     const location = useLocation()
@@ -22,10 +28,18 @@ const Topbar = () => {
     const [logTab, setLogTab] = useState(false)
     const onTypeIn = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value)
+
     }
     const onLogout = () => {
         auth.signOut()
         setLogged(false)
+        toast.info("Loged out")
+    }
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        dispatch(GetUsers(search as string))
+        toast.info("Only in console for now")
+        console.log(usersState)
     }
 
     return (
@@ -42,7 +56,9 @@ const Topbar = () => {
                         </div>}
 
                         <div style={{ flexGrow: 1 }}></div>
-                        {(location.pathname === '/github') ? <TextField label="Search on Github" color="secondary" value={search} onChange={onTypeIn} /> : <div></div>}
+                        <form onSubmit={onSubmit}>
+                            {(location.pathname === '/github') ? <TextField label="Search on Github" color="secondary" value={search} onChange={onTypeIn} /> : <div></div>}
+                        </form>
 
                     </Toolbar>
                 </AppBar>

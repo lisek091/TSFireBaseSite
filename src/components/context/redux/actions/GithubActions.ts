@@ -4,15 +4,12 @@ import axios from 'axios'
 
 
 export const GetUser = (user:string) => async (dispatch:Dispatch<GithubDispatchTypes>) =>{
+    const github = "https://api.github.com"
     try {
         dispatch({
             type:GITHUB_LOADING
         })
-        const response = await axios.get(`${process.env.REACT_APP_GITHUB_URL}/users/${user}`,{
-            headers:{
-                Authorization : `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-            }
-        })
+        const response = await axios.get(`${github}/users/${user}`,)
         dispatch({
             type:GITHUB_SUCCES,
             payload:response.data
@@ -27,3 +24,8 @@ export const GetUser = (user:string) => async (dispatch:Dispatch<GithubDispatchT
         }
     }
 }
+
+/*
+
+
+*/
